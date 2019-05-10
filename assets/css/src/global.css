@@ -76,35 +76,6 @@
 	max-width: 100%;
 }
 
-@media (--sidebar-query) {
-
-	.has-sidebar .site {
-		margin: 0 1em;
-		display: grid;
-		grid-template-columns: 3fr 1fr;
-		grid-gap: 2rem;
-		justify-content: center;
-	}
-
-	.site-header {
-		grid-column: span 2;
-	}
-
-	.site-main {
-		grid-column: 1;
-		min-width: 0;
-	}
-
-	.primary-sidebar {
-		grid-column: 2;
-		min-width: 0;
-	}
-
-	.site-footer {
-		grid-column: span 2;
-	}
-}
-
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -199,35 +170,63 @@ select {
 --------------------------------------------------------------*/
 
 .site-header {
-	padding-bottom: 1em;
+	display: grid;
+	/* stylelint-disable */
+	grid-template-columns:
+ minmax(2rem, 1fr) minmax(4rem, 10rem) minmax(auto, 60rem) minmax(2rem, 1fr);
+	/* stylelint-enable */
 }
 
 .header-image {
-	margin: 0 auto;
+	grid-row: 1 / span 3;
+	grid-column: 1 / span 4;
+	display: grid;
+	margin: 0;
+	min-width: 0;
+}
+
+.header-image::after {
+	grid-row: 1;
+	grid-column: 1;
+	display: block;
+	height: 7rem;
+	background:
+ linear-gradient(180deg, hsla(0, 0%, 0%, 0.75) 0%, hsla(0, 0%, 0%, 0) 100%);
+	content: "";
 }
 
 .header-image img {
+	grid-row: 1;
+	grid-column: 1;
 	display: block;
-	margin: 0 auto;
-}
-
-.custom-logo-link {
-	display: inline-block;
-	margin: 0 auto 1em;
+	margin: 0;
+	width: 100vw;
 }
 
 .site-branding {
+	grid-row: 1;
+	grid-column: 2;
 	text-align: center;
 	padding: 60px 0 1.75em;
 }
 
+.custom-logo-link {
+	grid-row: 1;
+	grid-column: 2;
+	margin-top: 1rem;
+	max-width: 10rem;
+}
+
 .site-title {
-	margin: 0 1em;
+	grid-row: 2;
+	grid-column: 2 / span 2;
+	margin: 0;
+	padding: 0 0 0.5rem;
 	font-family: var(--highlight-font-family);
 	font-size: 38px;
-	font-weight: 700;
+	font-weight: 400;
 	line-height: 1.2;
-	color: #333332;
+	color: #fff;
 }
 
 .site-title a {
@@ -236,18 +235,21 @@ select {
 }
 
 .site-description {
-	margin: 0.4375em 0 0;
+	grid-row: 3;
+	grid-column: 2 / span 2;
+	margin: 0;
 	font-family: var(--highlight-font-family);
 	font-size: 17px;
 	font-weight: inherit;
 	line-height: 1.4;
 	word-wrap: break-word;
-	color: #757575;
+	color: #fff;
 }
 
 /*--------------------------------------------------------------
 ## Basic navigation menus - handles submenu and small screen toggle
 --------------------------------------------------------------*/
+
 .nav--toggle-small .menu-toggle {
 	display: block;
 	margin: 1.2em auto;
@@ -324,7 +326,7 @@ select {
 		top: 35%;
 		width: 60%;
 		height: 60%;
-		border: solid #000;
+		border: solid #fff;
 		border-width: 0 2px 2px 0;
 		transform: translateY(-50%) rotate(45deg);
 	}
@@ -332,11 +334,12 @@ select {
 	.nav--toggle-sub ul ul .dropdown,
 	.nav--toggle-sub ul ul .dropdown-toggle {
 		top: 40%;
-		right: 0.2em;
+		right: 0.5em;
 	}
 
 	.nav--toggle-sub ul ul .dropdown-symbol {
 		transform: rotate(-45deg);
+		border-color: #000;
 	}
 
 	.nav--toggle-sub .dropdown-toggle:hover,
@@ -371,14 +374,17 @@ select {
 ## Main navigation menu
 --------------------------------------------------------------*/
 .main-navigation {
+	grid-row: 1;
+	grid-column: 3;
 	clear: both;
 	display: block;
-	margin: 0 auto 2em;
-	padding: 0 1em;
+	margin-top: 1rem;
 	/* stylelint-disable */
 	max-width: var(--content-width);
 	/* stylelint-enable */
 	font-family: var(--highlight-font-family);
+	font-size: 90%;
+	text-transform: uppercase;
 }
 
 .main-navigation a {
@@ -386,7 +392,7 @@ select {
 	width: 100%;
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 }
 
 .main-navigation a:hover,
@@ -421,6 +427,7 @@ select {
 
 	.main-navigation ul ul a {
 		width: 200px;
+		color: #000;
 	}
 
 	/* stylelint-disable */
@@ -444,7 +451,7 @@ select {
 	.main-navigation .menu {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: flex-end;
 	}
 }
 
@@ -457,9 +464,11 @@ select {
 .site-main .pagination {
 	border-bottom: 1px solid #111;
 	margin: 0 auto 2em;
-	max-width: 720px;
+	/* stylelint-disable */
+	max-width: var(--content-width);
+	/* stylelint-enable */
 	overflow: hidden;
-	padding: 0 1.5rem 2em;
+	padding: 0 2rem 2em;
 	font-family: var(--highlight-font-family);
 }
 

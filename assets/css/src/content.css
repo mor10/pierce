@@ -62,8 +62,8 @@
 .entry-summary > * {
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: 1.5rem;
-	padding-left: 1.5rem;
+	padding-right: 2rem;
+	padding-left: 2rem;
 	/* stylelint-disable */
 	max-width: var(--content-width);
 	/* stylelint-enable */
@@ -77,8 +77,8 @@
 .page-navigation,
 .comments-area {
 	margin: 1.5em auto;
-	padding-right: 1.5rem;
-	padding-left: 1.5rem;
+	padding-right: 2rem;
+	padding-left: 2rem;
 	/* stylelint-disable */
 	max-width: var(--content-width);
 	/* stylelint-enable */
@@ -131,7 +131,7 @@
 
 .entry-footer {
 	clear: both;
-	padding: 1.5em 1.5rem 3em;
+	padding: 2em 2rem 3em;
 	border-bottom: 1px solid #111;
 }
 

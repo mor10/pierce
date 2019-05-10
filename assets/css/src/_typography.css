@@ -24,16 +24,16 @@ h4,
 h5,
 h6 {
 	font-family: var(--highlight-font-family);
-	color: #32373c;
 	clear: both;
 }
 
-.entry-header h1.entry-title,
-.page-header .page-title {
-	font-size: 2.5rem;
+.entry-title,
+.page-title {
+	font-size: 3.4rem;
 	line-height: 1.4;
 	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-bottom: 0;
+	text-transform: uppercase;
 }
 
 dfn,

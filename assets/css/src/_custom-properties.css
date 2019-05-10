@@ -6,30 +6,27 @@
  **/
 
 :root {
-	--global-font-color: #333;
-	--global-font-family: "Crimson Text", serif;
+	--global-font-color: hsl(0, 0%, 10%);
+	--global-font-family: "Fira Sans", sans-serif;
 	--global-font-size: 20;
 	--global-font-line-height: 1.4;
-	--highlight-font-family: "Roboto Condensed", sans-serif;
-	--content-width: 45rem;
+	--highlight-font-family: "Fira Sans", sans-serif;
+	--content-width: 70rem;
 	--dropdown-symbol-width: 0.7em;
 
 	/* Custom editor colors */
-	--color-theme-primary: #e36d60;
-	--color-theme-secondary: #41848f;
-	--color-theme-red: #c0392b;
-	--color-theme-green: #27ae60;
-	--color-theme-blue: #2980b9;
-	--color-theme-yellow: #f1c40f;
-	--color-theme-black: #1c2833;
-	--color-theme-grey: #95a5a6;
-	--color-theme-white: #ecf0f1;
-	--color-custom-daylight: #97c0b7;
-	--color-custom-sun: #eee9d1;
+	--color-theme-primary: #2c3d58;
+	--color-theme-secondary: #408590;
+	--color-theme-highlight-green: #84c1b5;
+	--color-theme-green: #459482;
+	--color-theme-black: #010203;
+	--color-theme-grey: #463e40;
+	--color-theme-light-grey: #f5f5f5;
 
-	--color-link: #0073aa;
-	--color-link-visited: #333;
-	--color-link-active: #00a0d2;
+
+	--color-link: hsl(217, 33%, 26%);
+	--color-link-visited: hsl(217, 33%, 16%);
+	--color-link-active: hsl(217, 33%, 36%);
 
 	--color-quote-border: #000;
 	--color-quote-citation: #6c7781;
