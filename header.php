@@ -35,8 +35,7 @@ namespace WP_Rig\WP_Rig;
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<?php get_template_part( 'template-parts/header/custom_header' ); ?>
+	<header id="masthead" class="site-header" <?php wp_rig()->inline_header_image(); ?>>
 
 		<?php get_template_part( 'template-parts/header/branding' ); ?>
 

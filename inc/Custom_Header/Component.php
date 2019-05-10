@@ -8,6 +8,8 @@
 namespace WP_Rig\WP_Rig\Custom_Header;
 
 use WP_Rig\WP_Rig\Component_Interface;
+use WP_Rig\WP_Rig\Templating_Component_Interface;
+use function WP_Rig\WP_Rig\wp_rig;
 use function add_action;
 use function add_theme_support;
 use function apply_filters;
@@ -15,13 +17,15 @@ use function get_header_textcolor;
 use function get_theme_support;
 use function display_header_text;
 use function esc_attr;
+use function esc_url;
+use function get_header_image;
 
 /**
  * Class for adding custom header support.
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  */
-class Component implements Component_Interface {
+class Component implements Component_Interface, Templating_Component_Interface {
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -75,5 +79,29 @@ class Component implements Component_Interface {
 		}
 
 		echo '<style type="text/css">.site-title a, .site-description { color: #' . esc_attr( $header_text_color ) . '; }</style>';
+	}
+
+	/**
+	 * Outputs the necessary inline style elements when a custom header image is available.
+	 */
+	public function inline_header_image() {
+		if ( ! has_header_image() ) {
+			return;
+		}
+
+		echo 'style="background-image: url(' . esc_url( get_header_image() ) . ')"';
+	}
+
+	/**
+	 * Gets template tags to expose as methods on the Template_Tags class instance, accessible through `wp_rig()`.
+	 *
+	 * @return array Associative array of $method_name => $callback_info pairs. Each $callback_info must either be
+	 *               a callable or an array with key 'callable'. This approach is used to reserve the possibility of
+	 *               adding support for further arguments in the future.
+	 */
+	public function template_tags() : array {
+		return array(
+			'inline_header_image' => array( $this, 'inline_header_image' ),
+		);
 	}
 }
