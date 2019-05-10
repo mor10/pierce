@@ -1,1 +1,10 @@
-{}
+{
+  "dev": {
+    "browserSync": {
+      "live": true,
+      "proxyURL": "newrig.local",
+      "bypassPort": "8181",
+      "https": true
+    }
+  }
+}
