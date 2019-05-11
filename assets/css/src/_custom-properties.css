@@ -16,13 +16,13 @@
 
 	/* Custom editor colors */
 	--color-theme-primary: #2c3d58;
-	--color-theme-secondary: #408590;
+	--color-theme-secondary: #5d6c28;
+	--color-theme-tertiary: #408590;
 	--color-theme-highlight-green: #84c1b5;
-	--color-theme-green: #459482;
+	--color-theme-green: #4aaa93;
 	--color-theme-black: #010203;
 	--color-theme-grey: #463e40;
 	--color-theme-light-grey: #f5f5f5;
-
 
 	--color-link: hsl(217, 33%, 26%);
 	--color-link-visited: hsl(217, 33%, 16%);

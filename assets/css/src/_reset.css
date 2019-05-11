@@ -91,7 +91,7 @@ abbr[title] {
 	border-bottom: none; /* 1 */
 	text-decoration: underline; /* 2 */
 	/* stylelint-disable */
-	text-decoration: underline dotted; /* 2 */  /* phpcs:ignore */
+	text-decoration: underline dotted; /* 2 */ /* phpcs:ignore */
 	/* stylelint-enable */
 }
 
@@ -362,4 +362,14 @@ template {
  */
 .no-js .lazy {
 	display: none !important;
+}
+
+/**
+ * CSS antialiasing
+ * Makes white-on-dark text not look thick.
+ * @link https://devhints.io/css-antialias
+ */
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }

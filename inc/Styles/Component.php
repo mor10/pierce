@@ -310,6 +310,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'front-page.php' === basename( $template );
 				},
 			),
+			'wp-rig-footer'    => array(
+				'file'             => 'footer.min.css',
+				'preload_callback' => '__return_false',
+			),
 		);
 
 		/**

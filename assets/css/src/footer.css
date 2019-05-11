@@ -1,26 +1,28 @@
 /*--------------------------------------------------------------
-# Sidebar
+# Footer
 --------------------------------------------------------------*/
-.sidebar {
+.site-footer {
 	padding: 2em;
 	font-family: var(--highlight-font-family);
 	color: #fff;
-	background: var(--color-theme-secondary);
+	background: var(--color-theme-primary);
 }
 
-.primary-sidebar {
+.site-footer a {
+	color: #fff;
+}
+
+.site-footer__widgets {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(10rem, 22rem));
-	justify-content: center;
 	grid-gap: 2rem;
-	max-width: var(--content-width);
-	margin: 0 auto;
+	justify-content: center;
 }
 
-.primary-sidebar .widget-title {
+.site-footer__widgets .widget-title {
 	font-weight: 400;
 }
 
-.primary-sidebar a {
-	color: #fff;
+.site-info {
+	text-align: center;
 }
